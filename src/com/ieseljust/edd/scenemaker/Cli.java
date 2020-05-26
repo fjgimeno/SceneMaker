@@ -107,7 +107,7 @@ public class Cli {
                     } catch (Exception e) {
                         // Si s'ha produït algun error als paràmetres, s'indica un error de sintaxi
                         System.out.println(
-                                "\u001B[31m Error de sintaxi. La sintaxi correcta és:\nrectangle x y width height color\u001B[0m");
+                                "\u001B[31m Error de sintaxi. La sintaxi correcta és:\nquadrat x y costat color\u001B[0m");
                     }
                     ;
                     break;
@@ -158,21 +158,21 @@ public class Cli {
                     // Creació d'una figura de la classe cercle
                     try {
                         // Extraiem les dimensions
-                        int x = Integer.parseInt((components[1]));
-                        int y = Integer.parseInt((components[2]));
-                        int w = Integer.parseInt((components[3]));
-                        int h = Integer.parseInt((components[4]));
+                        int x1 = Integer.parseInt((components[1]));
+                        int y1 = Integer.parseInt((components[2]));
+                        int x2 = Integer.parseInt((components[3]));
+                        int y2 = Integer.parseInt((components[4]));
                         String color = components[5];
 
                         // Si tot és correcte creem la figura cercle
-                        Figura novFig = new Rectangle(x, y, w, h, this.getColor(color));
+                        Figura novFig = new Linia(x1, y1, x2, y2, this.getColor(color));
                         // I l'afegim a la llista
                         AppEscena.add(novFig);
 
                     } catch (Exception e) {
                         // Si s'ha produït algun error als paràmetres, s'indica un error de sintaxi
                         System.out.println(
-                                "\u001B[31m Error de sintaxi. La sintaxi correcta és:\nrectangle x y width height color\u001B[0m");
+                                "\u001B[31m Error de sintaxi. La sintaxi correcta és:\nlinia x1 y1 x2 y2 color\u001B[0m");
                     }
                     ;
                     break;

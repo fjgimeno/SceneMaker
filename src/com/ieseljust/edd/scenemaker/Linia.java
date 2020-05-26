@@ -17,20 +17,23 @@ public class Linia extends Figura{
         // Constructor per defecte sense paràmetres
         this.x = 0;
         this.y = 100;
+        this.color = Color.BLACK;
     }
 
     Linia(int x, int y) {
         // Constructor on s'especifica la posició inicial i final d'una linia
         this.x = x;
         this.y = y;
+        this.color = Color.BLACK;
     }
 
-    Linia(int x, int y, int x2, int y2) {
+    Linia(int x, int y, int x2, int y2, Color color) {
         // Constructor on s'especifica la posició inicial i final de dues linies
         this.x = x;
         this.y = y;
         this.x2 = x2;
         this.y2 = y2;
+        this.color = color;
     }
 
     // Mètode Accessors
@@ -61,7 +64,8 @@ public class Linia extends Figura{
          * Per dibuixar altres primitives de la classe Graphics, podeu consultar
          * https://docs.oracle.com/javase/10/docs/api/java/awt/Graphics.html
          */
-
+        //System.out.println("HEY QUE ESTIC FENT UNA LINIA");
+        g.setColor(this.color);             // Establim el color interior
         g.drawLine(x, y, x2, x2);    // Dibuixem dues Linies en la posició i mida indicades.
     };
 

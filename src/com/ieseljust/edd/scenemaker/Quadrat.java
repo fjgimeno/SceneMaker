@@ -9,7 +9,6 @@ public class Quadrat extends Figura{
     /*
      * Aquesta classe representa un element gràfic de tipus Quadrat
      */
-    private Color color;
     private Integer side;
 
     // Constructors
