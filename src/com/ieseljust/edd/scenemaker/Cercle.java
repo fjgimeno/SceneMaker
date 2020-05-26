@@ -5,14 +5,10 @@ import java.awt.Color;
 
 import com.ieseljust.edd.scenemaker.Renderizable;
 
-public class Cercle implements Renderizable{
+public class Cercle implements Figura{
     /*
      * Aquesta classe representa un element gràfic de tipus Cercle
      */
-
-    private Integer x;
-    private Integer y;
-    private Color color;
     private Integer radi;
 
     // Constructors
@@ -48,24 +44,16 @@ public class Cercle implements Renderizable{
         this.color = color;
     }
 
-    // Mètode Accessors
-
-    public Integer getX() {
-        return x;
-    }
-
-    public Integer getY() {
-        return y;
-    }
-
+    @Override
     public void describeMe() {
         /*
          * Mètode que mostra en mode text una descripció de la figura per la consola.
          * S'utilitzarà per al mètode llista de la CLI.
          */
-        System.out.println("Cercle " + x + " " + y + " " + radi + " " + color);
+        System.out.println("cercle " + x + " " + y + " " + radi + " " + color);
     };
 
+    @Override
     public void render(Graphics g) {
         /*
          * Mètode que dibuixa sobre un context gràfic la figura rectangle.

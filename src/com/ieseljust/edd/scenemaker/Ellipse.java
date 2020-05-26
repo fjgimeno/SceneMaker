@@ -5,14 +5,10 @@ import java.awt.Color;
 
 import com.ieseljust.edd.scenemaker.Renderizable;
 
-public class Ellipse implements Renderizable{
+public class Ellipse implements Figura{
     /*
      * Aquesta classe representa un element gràfic de tipus Ellipse
      */
-
-    private Integer x;
-    private Integer y;
-    private Color color;
     private Integer radi_X;
     private Integer radi_Y;
 
@@ -53,24 +49,16 @@ public class Ellipse implements Renderizable{
         this.color = color;
     }
 
-    // Mètode Accessors
-
-    public Integer getX() {
-        return x;
-    }
-
-    public Integer getY() {
-        return y;
-    }
-
+    @Override
     public void describeMe() {
         /*
          * Mètode que mostra en mode text una descripció de la figura per la consola.
          * S'utilitzarà per al mètode llista de la CLI.
          */
-        System.out.println("Ellipse " + x + " " + y + " " + radi_X + " " + color);
+        System.out.println("ellipse " + x + " " + y + " " + radi_X + " " + radi_Y + " " + color);
     };
 
+    @Override
     public void render(Graphics g) {
         /*
          * Mètode que dibuixa sobre un context gràfic la figura rectangle.

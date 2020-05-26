@@ -5,14 +5,10 @@ import java.awt.Color;
 
 import com.ieseljust.edd.scenemaker.Renderizable;
 
-public class Rectangle implements Renderizable{
+public class Rectangle implements Figura{
     /*
      * Aquesta classe representa un element gràfic de tipus rectangle
      */
-
-    private Integer x;
-    private Integer y;
-    private Color color;
     private Integer width;
     private Integer height;
 
@@ -53,16 +49,7 @@ public class Rectangle implements Renderizable{
         this.color = color;
     }
 
-    // Mètode Accessors
-
-    public Integer getX() {
-        return x;
-    }
-
-    public Integer getY() {
-        return y;
-    }
-
+    @Override
     public void describeMe() {
         /*
          * Mètode que mostra en mode text una descripció de la figura per la consola.
@@ -71,6 +58,7 @@ public class Rectangle implements Renderizable{
         System.out.println("rectangle " + x + " " + y + " " + width + " " + height + " " + color);
     };
 
+    @Override
     public void render(Graphics g) {
         /*
          * Mètode que dibuixa sobre un context gràfic la figura rectangle.

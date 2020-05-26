@@ -18,11 +18,7 @@ public class Renderer extends Canvas {
     private static final long serialVersionUID = 1L;
 
     // Contingut de l'escena a dibuixar
-    ArrayList<Rectangle> Scene;
-    ArrayList<Quadrat> Scene;
-    ArrayList<Linia> Scene;
-    ArrayList<Ellipse> Scene;
-    ArrayList<Cercle> Scene;
+    ArrayList<Figura> Scene;
     Integer w, h;
     
     Renderer() {};  // Constructor buit
@@ -33,28 +29,12 @@ public class Renderer extends Canvas {
         h = y;
     };
 
-    Renderer(ArrayList<Rectangle> Scene) {
-        // Constructor passnt-li l'escena.
-        this.Scene = Scene;
-    };
-    Renderer(ArrayList<Quadrat> Scene) {
-        // Constructor passnt-li l'escena.
-        this.Scene = Scene;
-    };
-    Renderer(ArrayList<Linia> Scene) {
-        // Constructor passnt-li l'escena.
-        this.Scene = Scene;
-    };
-    Renderer(ArrayList<Cercle> Scene) {
-        // Constructor passnt-li l'escena.
-        this.Scene = Scene;
-    };
-    Renderer(ArrayList<Ellipse> Scene) {
+    Renderer(ArrayList<Figura> Scene) {
         // Constructor passnt-li l'escena.
         this.Scene = Scene;
     };
 
-    int Render(ArrayList<Rectangle> Scene) {
+    int Render(ArrayList<Figura> Scene) {
         /*
         Crea el JFrame i el Canvas per dibuixar la
         imatge i mostrar-la per pantalla.
@@ -70,69 +50,7 @@ public class Renderer extends Canvas {
         repaint();
         return 1;
     }
-    int Render(ArrayList<Quadrat> Scene) {
-        /*
-        Crea el JFrame i el Canvas per dibuixar la
-        imatge i mostrar-la per pantalla.
-        */
-        JFrame frame = new JFrame("SceneMaker");
-        System.out.println(w + " " + h);
-        Canvas canvas = new Renderer(Scene);
-        canvas.setSize(w, h);
-        frame.add(canvas);
-        frame.pack();
-        frame.setVisible(true);
 
-        repaint();
-        return 1;
-    }
-    int Render(ArrayList<Linia> Scene) {
-        /*
-        Crea el JFrame i el Canvas per dibuixar la
-        imatge i mostrar-la per pantalla.
-        */
-        JFrame frame = new JFrame("SceneMaker");
-        System.out.println(w + " " + h);
-        Canvas canvas = new Renderer(Scene);
-        canvas.setSize(w, h);
-        frame.add(canvas);
-        frame.pack();
-        frame.setVisible(true);
-
-        repaint();
-        return 1;
-    }int Render(ArrayList<Cercle> Scene) {
-        /*
-        Crea el JFrame i el Canvas per dibuixar la
-        imatge i mostrar-la per pantalla.
-        */
-        JFrame frame = new JFrame("SceneMaker");
-        System.out.println(w + " " + h);
-        Canvas canvas = new Renderer(Scene);
-        canvas.setSize(w, h);
-        frame.add(canvas);
-        frame.pack();
-        frame.setVisible(true);
-
-        repaint();
-        return 1;
-    }
-    int Render(ArrayList<Ellipse> Scene) {
-        /*
-        Crea el JFrame i el Canvas per dibuixar la
-        imatge i mostrar-la per pantalla.
-        */
-        JFrame frame = new JFrame("SceneMaker");
-        System.out.println(w + " " + h);
-        Canvas canvas = new Renderer(Scene);
-        canvas.setSize(w, h);
-        frame.add(canvas);
-        frame.pack();
-        frame.setVisible(true);
-
-        repaint();
-        return 1;
-    }
 
     // @Override
     public void paint(Graphics g) {
@@ -145,11 +63,7 @@ public class Renderer extends Canvas {
         
         */
         if (Scene != null) {
-            Scene.forEach((Rectangle) -> Rectangle.render(g));
-            Scene.forEach((Quadrat) -> Quadrat.render(g));
-            Scene.forEach((Linia) -> Linia.render(g));
-            Scene.forEach((Cercle) -> Cercle.render(g));
-            Scene.forEach((Ellipse) -> Ellipse.render(g));
+            Scene.forEach((Figura -> render(g));
         }
     }
 

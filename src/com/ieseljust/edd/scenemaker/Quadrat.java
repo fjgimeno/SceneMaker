@@ -5,13 +5,10 @@ import java.awt.Color;
 
 import com.ieseljust.edd.scenemaker.Renderizable;
 
-public class Quadrat implements Renderizable{
+public class Quadrat implements Figura{
     /*
      * Aquesta classe representa un element gràfic de tipus Quadrat
      */
-
-    private Integer x;
-    private Integer y;
     private Color color;
     private Integer side;
 
@@ -48,24 +45,16 @@ public class Quadrat implements Renderizable{
         this.color = color;
     }
 
-    // Mètode Accessors
-
-    public Integer getX() {
-        return x;
-    }
-
-    public Integer getY() {
-        return y;
-    }
-
+    @Override
     public void describeMe() {
         /*
          * Mètode que mostra en mode text una descripció de la figura per la consola.
          * S'utilitzarà per al mètode llista de la CLI.
          */
-        System.out.println("quadrat " + x + " " + y + " " + side + " " + side + " " + color);
+        System.out.println("quadrat " + x + " " + y + " " + side + " " + color);
     };
 
+    @Override
     public void render(Graphics g) {
         /*
          * Mètode que dibuixa sobre un context gràfic la figura rectangle.

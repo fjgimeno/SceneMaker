@@ -15,11 +15,7 @@ class Escena {
     private int tamY;
 
     // Les figures de l'escena s'emmagatzemen en una llista
-    private ArrayList<Rectangle> LlistaFigures;
-    private ArrayList<Cercle> LlistaCercles;
-    private ArrayList<Ellipse> LlistaEllipses;
-    private ArrayList<Linia> LlistaLinies;
-    private ArrayList<Quadrat> LlistaQuadrats;
+    private ArrayList<Figura> LlistaFigures;
 
     Escena() {
         // Constructor. Pr defecte creem un tamany de 800x600;
@@ -27,11 +23,7 @@ class Escena {
         this.tamY = 600;
 
         // Inicialitzem la llista de figures
-        LlistaFigures = new ArrayList<Rectangle>();
-        LlistaCercles = new ArrayList<Cercle>();
-        LlistaEllipses = new ArrayList<Ellipse>();
-        LlistaLinies = new ArrayList<Linia>();
-        LlistaQuadrats = new ArrayList<Quadrat>();
+        LlistaFigures = new ArrayList<Figura>();
 
     }
 
@@ -42,11 +34,7 @@ class Escena {
         this.tamY = y;
 
         // Inicialitzem la llista de figures
-        LlistaFigures = new ArrayList<Rectangle>();
-        LlistaCercles = new ArrayList<Cercle>();
-        LlistaEllipses = new ArrayList<Ellipse>();
-        LlistaLinies = new ArrayList<Linia>();
-        LlistaQuadrats = new ArrayList<Quadrat>();
+        LlistaFigures = new ArrayList<Figura>();
     }
 
     // Mètodes accessors
@@ -83,7 +71,7 @@ class Escena {
 
     public void add(Quadrat figura) {
         /*
-         * Aquest mètode afig un objecte de tipus Rectangle a l'escena.
+         * Aquest mètode afig un objecte de tipus quadrat a l'escena.
          */
 
         // Comprovem que la figura cau dins la imatge
@@ -98,7 +86,7 @@ class Escena {
 
     public void add(Cercle figura) {
         /*
-         * Aquest mètode afig un objecte de tipus Rectangle a l'escena.
+         * Aquest mètode afig un objecte de tipus cercle a l'escena.
          */
 
         // Comprovem que la figura cau dins la imatge
@@ -113,7 +101,7 @@ class Escena {
 
     public void add(Ellipse figura) {
         /*
-         * Aquest mètode afig un objecte de tipus Rectangle a l'escena.
+         * Aquest mètode afig un objecte de tipus ellipse a l'escena.
          */
 
         // Comprovem que la figura cau dins la imatge
@@ -128,11 +116,11 @@ class Escena {
 
     public void add(Linia figura) {
         /*
-         * Aquest mètode afig un objecte de tipus Rectangle a l'escena.
+         * Aquest mètode afig un objecte de tipus linia a l'escena.
          */
 
         // Comprovem que la figura cau dins la imatge
-        if (figura.getX1() < this.tamX && figura.getY1() < this.tamY && figura.getX2() < this.tamX && figura.getY2() < this.tamY) {
+        if (figura.getX() < this.tamX && figura.getY() < this.tamY && figura.getX2() < this.tamX && figura.getY2() < this.tamY) {
             this.LlistaFigures.add(figura);
             System.out.println("\u001B[32m OK \u001B[0m");
         } else {
@@ -146,19 +134,7 @@ class Escena {
 
         // Recorrem la llista de figures i invoquem
         // el mètode describeMe de cadascuna d'elles.
-        for (Rectangle f : this.LlistaFigures) {
-            f.describeMe();
-        }
-        for (Quadrat : this.LlistaQuadrats) {
-            f.describeMe();
-        }
-        for (Cercle f : this.LlistaCercles) {
-            f.describeMe();
-        }
-        for (Ellipse f : this.LlistaEllipses) {
-            f.describeMe();
-        }
-        for (Linia f : this.LlistaLinies) {
+        for (Figura f : this.LlistaFigures) {
             f.describeMe();
         }
     }
