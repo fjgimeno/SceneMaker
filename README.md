@@ -1,3 +1,5 @@
+![SceneMaker EGG](doc/img/SceneMakerEGG.png)
+
 # scene-maker
 Simple Java CLI Application to draw rectangles.
 
