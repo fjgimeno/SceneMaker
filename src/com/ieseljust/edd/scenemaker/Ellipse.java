@@ -5,7 +5,7 @@ import java.awt.Color;
 
 import com.ieseljust.edd.scenemaker.Renderizable;
 
-public class Ellipse implements Figura{
+public class Ellipse extends Figura{
     /*
      * Aquesta classe representa un element gràfic de tipus Ellipse
      */

@@ -100,7 +100,7 @@ public class Cli {
                         String color = components[4];
 
                         // Si tot és correcte creem la figura cercle
-                        Figura novFig = new Quadrat(x, y, w, h, this.getColor(color));
+                        Figura novFig = new Quadrat(x, y, side, this.getColor(color));
                         // I l'afegim a la llista
                         AppEscena.add(novFig);
 

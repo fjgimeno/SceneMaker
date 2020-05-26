@@ -5,7 +5,7 @@ import java.awt.Color;
 
 import com.ieseljust.edd.scenemaker.Renderizable;
 
-public class Rectangle implements Figura{
+public class Rectangle extends Figura{
     /*
      * Aquesta classe representa un element gràfic de tipus rectangle
      */

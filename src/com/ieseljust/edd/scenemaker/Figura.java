@@ -53,7 +53,7 @@ public class Figura implements Renderizable{
          * Mètode que mostra en mode text una descripció de la figura per la consola.
          * S'utilitzarà per al mètode llista de la CLI.
          */
-        System.out.println(figura + x + " " + y + " " + color);
+        System.out.println("figura" + x + " " + y + " " + color);
     };
 
     public void render(Graphics g) {

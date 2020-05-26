@@ -5,7 +5,7 @@ import java.awt.Color;
 
 import com.ieseljust.edd.scenemaker.Renderizable;
 
-public class Cercle implements Figura{
+public class Cercle extends Figura{
     /*
      * Aquesta classe representa un element gràfic de tipus Cercle
      */

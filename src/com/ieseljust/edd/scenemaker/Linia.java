@@ -5,7 +5,7 @@ import java.awt.Color;
 
 import com.ieseljust.edd.scenemaker.Renderizable;
 
-public class Linia implements Figura{
+public class Linia extends Figura{
     /*
      * Aquesta classe representa un element gràfic de tipus Linia
      */

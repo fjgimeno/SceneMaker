@@ -63,7 +63,7 @@ public class Renderer extends Canvas {
         
         */
         if (Scene != null) {
-            Scene.forEach((Figura -> render(g)));
+            Scene.forEach((Figura -> Figura.render(g)));
         }
     }
 

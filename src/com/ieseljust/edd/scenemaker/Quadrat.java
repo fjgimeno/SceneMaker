@@ -5,7 +5,7 @@ import java.awt.Color;
 
 import com.ieseljust.edd.scenemaker.Renderizable;
 
-public class Quadrat implements Figura{
+public class Quadrat extends Figura{
     /*
      * Aquesta classe representa un element gràfic de tipus Quadrat
      */
