@@ -186,12 +186,7 @@ public class Cli {
                 case "get":
                     // Descarreguem una figura en el format que estem treballant des d'Internet
                     // D'això s'encarrega la classe RemoteManager ja implementada
-                    //
-                    //He tingut que declarar les seguents variables fora ja que fer-ho dins donava errors a l'hora de compilar
-                    //Açó ho fa funcionar pero en aquesta classe hi ha molt de codi repetit.
                     int x, y, w, h;
-                    String color;
-                    Figura novFig;
                     try {
                         // Descarrega una llista de figures
                         String fitxer = components[1];
@@ -213,46 +208,46 @@ public class Cli {
                                     y = Integer.parseInt((items[2]));
                                     w = Integer.parseInt((items[3]));
                                     h = Integer.parseInt((items[4]));
-                                    color = items[5];
+                                    String color = items[5];
 
                                     // Si tot és correcte creem la figura cercle
-                                    novFig = new Rectangle(x, y, w, h, this.getColor(color));
+                                    Figura novFig = new Rectangle(x, y, w, h, this.getColor(color));
                                     // I l'afegim a la llista
                                     AppEscena.add(novFig);
                                     break;
                                 case "quadrat":
-                                    x = Integer.parseInt((items[1]));
-                                    y = Integer.parseInt((items[2]));
-                                    int side = Integer.parseInt((items[3]));
-                                    color = items[4];
+                                    int x = Integer.parseInt((items[1]));
+                                    int y = Integer.parseInt((items[2]));
+                                    int w = Integer.parseInt((items[3]));
+                                    String color = items[4];
 
                                     // Si tot és correcte creem la figura cercle
-                                    novFig = new Quadrat(x, y, side, this.getColor(color));
+                                    Figura novFig = new Quadrat(x, y, w, h, this.getColor(color));
                                     // I l'afegim a la llista
                                     AppEscena.add(novFig);
                                     break;
                                 case "cercle":
                                     // Creació d'una figura de la classe cercle
-                                    x = Integer.parseInt((items[1]));
-                                    y = Integer.parseInt((items[2]));
+                                    int x = Integer.parseInt((items[1]));
+                                    int y = Integer.parseInt((items[2]));
                                     int rad = Integer.parseInt((items[3]));
-                                    color = items[4];
+                                    String color = items[4];
 
                                     // Si tot és correcte creem la figura cercle
-                                    novFig = new Cercle(x, y, rad, this.getColor(color));
+                                    Figura novFig = new Cercle(x, y, rad, this.getColor(color));
                                     // I l'afegim a la llista
                                     AppEscena.add(novFig);   
                                     break;
                                 case "ellipse":
                                     // Creació d'una figura de la classe cercle
-                                    x = Integer.parseInt((items[1]));
-                                    y = Integer.parseInt((items[2]));
+                                    int x = Integer.parseInt((items[1]));
+                                    int y = Integer.parseInt((items[2]));
                                     int radX = Integer.parseInt((items[3]));
                                     int radY = Integer.parseInt((items[4]));
-                                    color = items[5];
+                                    String color = items[5];
 
                                     // Si tot és correcte creem la figura cercle
-                                    novFig = new Ellipse(x, y, radX, radY, this.getColor(color));
+                                    Figura novFig = new Ellipse(x, y, radX, radY, this.getColor(color));
                                     // I l'afegim a la llista
                                     AppEscena.add(novFig);
                                     break;
@@ -261,11 +256,11 @@ public class Cli {
                                     int x1 = Integer.parseInt((items[1]));
                                     int y1 = Integer.parseInt((items[2]));
                                     int x2 = Integer.parseInt((items[3]));
-                                    int y2 = Integer.parseInt((items[4]));
-                                    color = items[5];
+                                    int y2 = Integer.parseInt((citems[4]));
+                                    String color = items[5];
 
                                     // Si tot és correcte creem la figura cercle
-                                    novFig = new Linia(x1, y1, x2, y2, this.getColor(color));
+                                    Figura novFig = new Linia(x1, y1, x2, y2, this.getColor(color));
                                     // I l'afegim a la llista
                                     AppEscena.add(novFig);
                                     break;                               
